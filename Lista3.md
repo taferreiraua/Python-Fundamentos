@@ -30,7 +30,6 @@ print(f"O número possui {len(str(num))} digitos.")
 > **_Faça um programa para calcular a série de Fibonacci para um número informado pelo
 > usuário, sendo F(0) = 0, F(1) = 1 e F(n)= F(n-1)+F(n-2). Por exemplo, caso o usuário
 > informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34._**
-
 ---
 ```python
 num = int(input("Digite um número: "))
@@ -57,4 +56,22 @@ print(f'A série fibonnaci para esse número é {fibon}')
 ```
 ---
 
-###  
+### **Questão 4:**
+
+> **_Faça um programa para listar todos os divisores de um número ou dizer que o número
+> é primo caso não existam divisores. Ao final, verifique se o usuário deseja analisar
+> outro número._**
+---
+```python
+num = int(input('Digite um número: '))
+ndiv = 0
+
+for div in range(num, 0, -1):
+    if num % div == 0:
+        res = round(num / div)
+        ndiv = ndiv + 1
+        print(f'{num}/{div} = {res}')
+if ndiv == 2:
+    print('O numero é primo.')
+```
+---
