@@ -84,7 +84,7 @@ if ndiv == 2:
 > **_Faça um programa que calcule o retorno de um investimento financeiro fazendo as
 > contas mês a mês, sem usar a fórmula de juros compostos._**
 > - **_O usuário deve informar quanto será investido por mês e qual será a taxa de
-> juros mensal;
+> juros mensal;_**
 > - O programa deve informar o saldo do investimento após um ano (soma das
 > aplicações mês a mês considerando os juros compostos), e perguntar ao
 > usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;
