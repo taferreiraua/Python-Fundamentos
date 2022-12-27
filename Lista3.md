@@ -91,8 +91,7 @@ if ndiv == 2:
 > - **_Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
 > taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:_**
 ```
-Saldo do investimento após 1 ano: R$ 1268.25 Deseja
-processar mais um ano? (S/N)
+Saldo do investimento após 1 ano: R$ 1268.25 Deseja processar mais um ano? (S/N)
 ```
 ---
 ```python
@@ -121,3 +120,27 @@ while res.lower() == 's':
 ```
 ---
 
+### **Questão 6:**
+> **_Escreva um programa que imprime na tela os n primeiros números perfeitos. Um
+> número perfeito é aquele que é igual à soma dos seus divisores. Por exemplo, 6 = 1 +
+> 2 + 3._**
+---
+```python
+def perfeito(n):
+    soma = 0
+    for val in range(1, n):
+        if n % val == 0:
+            soma += val
+    if soma == n:
+        return True
+    else:
+        return False
+
+
+n = int(input('Exibir perfeitos até o número: '))
+
+for val in range(1, n + 1):
+    if (perfeito(val)):
+        print(val)
+```
+---
