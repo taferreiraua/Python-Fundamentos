@@ -37,3 +37,43 @@ else:
 
 ### **Questão 2:**
 
+> **_Faça um programa que leia três coordenadas num espaço 2D e indique se formam um
+triângulo, juntamente com o seu tipo (equilátero, isósceles e escaleno)._**
+- Equilátero: todos os lados iguais;
+- Isósceles: dois lados iguais;
+- Escaleno: todos os lados diferentes.
+
+---
+```python
+print('Informe as medidas do triangulo\n')
+l1 = float(input('Lado 1: '))
+l2 = float(input('Lado 2: '))
+l3 = float(input('Lado 3: '))
+
+if l1 + l2 < l3 or l1 + l3 < l2 or l2 + l3 < l1: # Em qualquer triângulo, cada lado é menor que a soma dos outros dois lados
+    print('Não é um triângulo.')
+elif l1 == l2 == l3:
+    print('É um equilátero.')
+elif l1 == l2 or l1 == l3 or l2 == l3:
+    print('É um isosceles.')
+else:
+    print('É um escaleno.')
+```
+---
+
+### **Questão 3:**
+
+> **_Faça um programa que leia um número inteiro de 5 dígitos e indique se ele é
+> palíndromo. Um número palíndromo é aquele que se lido da esquerda para a direita
+> ou da direita para a esquerda possui o mesmo valor (ex.: 15451)._**
+
+---
+```python
+numero = input('Digite um número: ')
+
+if numero == numero[::-1]:
+    print('É um palindromo.')
+else:
+    print('Não é um palindromo.')
+```
+---
