@@ -90,9 +90,9 @@ aplicações mês a mês considerando os juros compostos), e perguntar ao
 usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;
 - Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
 taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:
-```python
-'Saldo do investimento após 1 ano: R$ 1268.25 Deseja
-processar mais um ano? (S/N)'
+```
+Saldo do investimento após 1 ano: R$ 1268.25 Deseja
+processar mais um ano? (S/N)
 ```
 _**
 
