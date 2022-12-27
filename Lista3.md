@@ -89,12 +89,35 @@ juros mensal;
 aplicações mês a mês considerando os juros compostos), e perguntar ao
 usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;
 - Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
-taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:
+taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:_**
 ```
 Saldo do investimento após 1 ano: R$ 1268.25 Deseja
 processar mais um ano? (S/N)
 ```
-_**
-
-
+---
+```python
+inves = float(input('Investimento mensal: '))
+juros = float(input('Juros: '))
+inv_in = 0
+mes = 1
+ano = 12
+saldo = 0
+res = ''
+while mes <= ano:
+    saldo = round(saldo + (saldo * (juros/100)) + inves, 2)
+    print(f'Mês {mes}: R${saldo}')
+    mes = mes + 1
+saldo = round(saldo - inv_in, 2)
+res = input(f'\nSaldo do investimento após 1 ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
+mes = 1
+while res.lower() == 's':
+    while mes <= ano:
+        saldo = round(saldo + (saldo * (juros / 100)) + inves, 2)
+        print(f'Mês {mes}: R${saldo}')
+        mes = mes + 1
+    saldo = round(saldo - inv_in, 2)
+    mes = 1
+    res = input(f'\nSaldo do investimento após 1 ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
+```
+---
 
