@@ -17,6 +17,7 @@ for i in range(1, 11):
 ### **Questão 2:**
 > **_Faça um programa para determinar o número de dígitos de um número inteiro
 positivo informado_**
+
 ---
 ```python
 num = int(input('Digite um número inteiro positivo: '))
@@ -30,6 +31,7 @@ print(f"O número possui {len(str(num))} digitos.")
 > **_Faça um programa para calcular a série de Fibonacci para um número informado pelo
 > usuário, sendo F(0) = 0, F(1) = 1 e F(n)= F(n-1)+F(n-2). Por exemplo, caso o usuário
 > informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34._**
+
 ---
 ```python
 num = int(input("Digite um número: "))
@@ -61,6 +63,7 @@ print(f'A série fibonnaci para esse número é {fibon}')
 > **_Faça um programa para listar todos os divisores de um número ou dizer que o número
 > é primo caso não existam divisores. Ao final, verifique se o usuário deseja analisar
 > outro número._**
+
 ---
 ```python
 num = int(input('Digite um número: '))
