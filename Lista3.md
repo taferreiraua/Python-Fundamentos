@@ -85,10 +85,10 @@ if ndiv == 2:
 > contas mês a mês, sem usar a fórmula de juros compostos._**
 > - **_O usuário deve informar quanto será investido por mês e qual será a taxa de
 > juros mensal;_**
-> - O programa deve informar o saldo do investimento após um ano (soma das
+> - **_O programa deve informar o saldo do investimento após um ano (soma das
 > aplicações mês a mês considerando os juros compostos), e perguntar ao
-> usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;
-> - Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
+> usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;_**
+> - **_Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
 > taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:_**
 ```
 Saldo do investimento após 1 ano: R$ 1268.25 Deseja
