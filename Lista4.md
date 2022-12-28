@@ -77,8 +77,8 @@ pelo programa: ASSENAV._**
 
 ### **Questão 7:**
 > **_Faça um programa que leia o nome do usuário e o imprima na vertical, em forma de
-escada, usando apenas letras maiúsculas. Por exemplo: +
- Entrada:_**
+escada, usando apenas letras maiúsculas. Por exemplo:
+<br/> Entrada:_**
 
 ---
 ```python
