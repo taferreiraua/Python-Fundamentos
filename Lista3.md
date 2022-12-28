@@ -142,3 +142,30 @@ for val in range(1, n + 1):
         print(val)
 ```
 ---
+
+### **Questão 7:**
+> **_Um número inteiro pode ser igual ao produto de 3 números inteiros consecutivos,
+como, por exemplo, 120 = 4 x 5 x 6. Elabore um programa que, após ler um número n
+do teclado, verifique se n tem essa propriedade._**
+
+---
+```python
+num = int(input('Digite um número: '))
+i = 1
+while i * (i+1) * (i+2) < num:
+    i = i + 1
+if i * (i+1) * (i+2) == num:
+    print(f'{num} é o produto de {i} x {i+1} x {i+2}')
+else:
+    print(f'{num} não é produto de inteiros consecutivos.')
+```
+---
+
+### **Questão 8:**
+> **_Elabore um programa que leia n valores e mostre a soma de seus quadrados._**
+
+---
+```python
+
+```
+---
