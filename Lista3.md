@@ -95,28 +95,25 @@ Saldo do investimento após 1 ano: R$ 1268.25 Deseja processar mais um ano? (S/N
 ```
 ---
 ```python
+def calcularJuros(inves, juros, saldo):
+    mes = 1
+    while mes <= 12:
+        saldo = round(saldo + (saldo * (juros / 100)) + inves, 2)
+        mes = mes + 1
+    return round(saldo, 2)
+
+
 inves = float(input('Investimento mensal: '))
 juros = float(input('Juros: '))
-inv_in = 0
-mes = 1
-ano = 12
 saldo = 0
-res = ''
-while mes <= ano:
-    saldo = round(saldo + (saldo * (juros/100)) + inves, 2)
-    print(f'Mês {mes}: R${saldo}')
-    mes = mes + 1
-saldo = round(saldo - inv_in, 2)
-res = input(f'\nSaldo do investimento após 1 ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
-mes = 1
+
+saldo = calcularJuros(inves, juros, saldo)
+ano = 1
+res = input(f'\nSaldo do investimento após {ano} ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
 while res.lower() == 's':
-    while mes <= ano:
-        saldo = round(saldo + (saldo * (juros / 100)) + inves, 2)
-        print(f'Mês {mes}: R${saldo}')
-        mes = mes + 1
-    saldo = round(saldo - inv_in, 2)
-    mes = 1
-    res = input(f'\nSaldo do investimento após 1 ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
+    saldo = calcularJuros(inves, juros, saldo)
+    ano += 1
+    res = input(f'\nSaldo do investimento após {ano} anos: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
 ```
 ---
 
@@ -124,6 +121,7 @@ while res.lower() == 's':
 > **_Escreva um programa que imprime na tela os n primeiros números perfeitos. Um
 > número perfeito é aquele que é igual à soma dos seus divisores. Por exemplo, 6 = 1 +
 > 2 + 3._**
+
 ---
 ```python
 def perfeito(n):
