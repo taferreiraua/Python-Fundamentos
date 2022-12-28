@@ -31,6 +31,11 @@ contém. Considere que a palavra pode começar e/ou terminar por espaços._**
 
 ---
 ```python
+frase = input('Digite a frase: ')
+
+plv = frase.split()
+
+print(f'Há {len(plv)} palavras nesta frase.')
 ```
 ---
 
@@ -40,6 +45,9 @@ contém. Considere que a palavra pode começar e/ou terminar por espaços._**
 
 ---
 ```python
+frase = input('Digite uma frase: ')
+
+print(frase.replace(' ', '#'))
 ```
 ---
 
@@ -50,6 +58,13 @@ amor e roma._**
 
 ---
 ```python
+plv = input('Digite uma palavra: ')
+
+vlp = plv[::-1]
+if plv == vlp:
+    print('A palavra é um palindromo.')
+else:
+    print('Não é um palindromo.')
 ```
 ---
 
@@ -62,6 +77,29 @@ caracteres iguais, ou seja, “a” = “A”._**
 
 ---
 ```python
+def isanagrama(plv1: str, plv2: str):
+    if len(plv1) != len(plv2):
+        return False
+    else:
+        plv1 = list(plv1)
+        plv2 = list(plv2)
+
+        plv1.sort()
+        plv2.sort()
+
+        if plv1 == plv2:
+            return True
+        else:
+            return False
+
+
+plv1 = input('Digite uma palavra: ').upper().strip()
+plv2 = input('Digite outra palavra: ').upper().strip()
+
+if isanagrama(plv1, plv2) is True:
+    print('É um anagrama.')
+else:
+    print('Não é um anagrama.')
 ```
 ---
 
@@ -72,13 +110,18 @@ pelo programa: ASSENAV._**
 
 ---
 ```python
+nome = input('Digite uma palavra: ')
+
+nome = nome[::-1]
+
+print(nome.upper())
 ```
 ---
 
 ### **Questão 7:**
 > **_Faça um programa que leia o nome do usuário e o imprima na vertical, em forma de
-escada, usando apenas letras maiúsculas. Por exemplo:
-- Entrada:_**
+escada, usando apenas letras maiúsculas. Por exemplo:_**
+> - **_Entrada:_**
 ```
 Nome = Vanessa
 ```
@@ -92,13 +135,32 @@ VAN
 
 ---
 ```python
+plv = input('Digite uma palavra: ').upper()
+
+for i in range(len(plv) + 1):
+    print(plv[:i])
 ```
 ---
 
 ### **Questão 8:**
-> **__**
+> **_Faça um programa que leia uma data de nascimento no formato dd/mm/aaaa e
+imprima a data com o mês escrito por extenso. Por exemplo:_**
+> - **_Entrada:_**
+```
+Data = 20/02/1995
+```
+> - **_Saída:_**
+```
+20 de fevereiro de 1995
+```
 
 ---
 ```python
+dia, mes, ano = input('Insira uma data (ex.: dd/mm/aaaa): ').split('/')
+
+meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho',
+         'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+
+print(f'{dia} de {meses[int(mes)-1]} de {ano}')
 ```
 ---
