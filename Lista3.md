@@ -174,3 +174,51 @@ while res != 'n':
 print(sum(vet))
 ```
 ---
+
+### **Questão 9:**
+> **_Faça um programa que leia dois valores x e y, e calcula o valor de x dividido por y,
+além do resto da divisão. Não é permitido usar as operações de divisão e resto de
+divisão do Python (use apenas soma e subtração)._**
+
+---
+```python
+num = int(input('Dividendo: '))
+div = int(input('Divisor: '))
+res = 0
+aux = div
+while div <= num:
+    ddiv = num - aux
+    res = res + 1
+    num = ddiv
+print(f'Resultado: {res}\nResto: {num}')
+```
+---
+
+### **Questão 10:**
+> **_Faça um programa em Python que calcule o valor de Pi, utilizando a fórmula de
+> Leibniz π/4 = 1 – 1/3 + 1/5 – 1/7 + 1/9 – 1/11 + 1/13 - ..._**
+
+---
+```python
+vetor = list()
+posipar = 0
+posimpar = 0
+
+#  Calculando o valor de cada fração
+for i in range(1, 1000000, 2):
+    inter = 1/i
+    vetor.append(inter)
+
+for j in range(500000):
+    if j % 2 == 0:  # Somando os valores em posição par
+        posipar += vetor[j]
+    else:  # Somando os valores em posição ímpar
+        posimpar += vetor[j]
+
+pi = (posipar - posimpar)*4
+print(pi)
+```
+---
+
+
+
