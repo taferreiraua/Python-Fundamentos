@@ -79,7 +79,7 @@ if ndiv == 2:
 ```
 ---
 
-### **Questão 4:**
+### **Questão 5:**
 
 > **_Faça um programa que calcule o retorno de um investimento financeiro fazendo as
 > contas mês a mês, sem usar a fórmula de juros compostos._**
