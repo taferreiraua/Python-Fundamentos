@@ -136,16 +136,10 @@ if __name__ == '__main__':
 
 ### **Questão 4:**
 > **_Faça um programa que, dado uma figura geométrica que pode ser uma circunferência,
-triângulo ou retângulo, calcule a área e o perímetro da figura._**
-
----
-```python
-
-```
----
-
-### **Questão 5:**
-> **__**
+triângulo ou retângulo, calcule a área e o perímetro da figura. O programa deve primeiro 
+perguntar qual o tipo da figura: circunferência, triângulo ou retângulo. Dependendo do 
+tipo de figura, ler o (1) tamanho do raio da circunferência; (2) tamanho de cada um dos 
+lados do triângulo; (3) tamanho dos dois lados retângulo. Usar funções sempre que possível._**
 
 ---
 ```python
