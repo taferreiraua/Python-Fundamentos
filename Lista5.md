@@ -25,7 +25,8 @@ print(ocorrencias)
 ---
 
 ### **Questão 2:**
-> **__**
+> **_Faça um programa que percorre um vetor e imprime na tela a média dos valores do
+vetor e o valor mais próximo da média._**
 
 ---
 ```python
@@ -65,15 +66,6 @@ elif abs(proxMai - media) < abs(proxMen - media):
 ---
 
 ### **Questão 3:**
-> **__**
-
----
-```python
-
-```
----
-
-### **Questão 4:**
 > **__**
 
 ---
