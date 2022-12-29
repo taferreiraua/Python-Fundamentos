@@ -34,9 +34,9 @@ print(f'Numero de combinações: {combinacao(n, m)}')
 ### **Questão 2:**
 > **_Faça uma função que informe o status do aluno a partir da sua média de acordo com a
 tabela a seguir:_**
-- **_Nota acima de 6 ⇒ “Aprovado”_**
-- **_Nota entre 4 e 6 ⇒ “Verificação Suplementar”_**
-- **_Nota abaixo de 4 ⇒ “Reprovado”_**
+> - **_Nota acima de 6 ⇒ “Aprovado”_**
+> - **_Nota entre 4 e 6 ⇒ “Verificação Suplementar”_**
+> - **_Nota abaixo de 4 ⇒ “Reprovado”_**
 
 ---
 ```python
