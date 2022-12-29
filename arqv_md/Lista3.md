@@ -42,9 +42,7 @@ elif num == 1:
     fibon = '[0, 1]'
 else:
     fibon = list()
-    fibon.append(0)
-    fibon.append(1)
-    fibon.append(1)
+    fibon.extend([0, 1, 1])
     ultimo = 1
     penultimo = 1
     for i in range(2, num):
