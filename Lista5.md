@@ -72,3 +72,12 @@ elif abs(proxMai - media) < abs(proxMen - media):
 
 ```
 ---
+
+### **Questão 4:**
+> **__**
+
+---
+```python
+
+```
+---
