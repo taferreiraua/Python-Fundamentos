@@ -24,10 +24,11 @@ def combinacao(num_m, num_n):
     return comb
 
 
-n = int(input('Total de alunos: '))
-m = int(input('Digite o numero de pessoas do 1° grupo: '))
+if __name__ == '__main__':
+    n = int(input('Total de alunos: '))
+    m = int(input('Digite o numero de pessoas do 1° grupo: '))
 
-print(f'Numero de combinações: {combinacao(n, m)}')
+    print(f'Numero de combinações: {combinacao(n, m)}')
 ```
 ---
 
@@ -52,15 +53,16 @@ def status(media):
         return f'Status: Reprovado.'
 
 
-res = ''
-notas = list()
-while res != 'n':
-    notas.append(int(input('Digite a nota: ')))
-    res = input('Deseja inserir outra nota? (S/N)').lower()
+if __name__ == '__main__':
+    res = ''
+    notas = list()
+    while res != 'n':
+        notas.append(int(input('Digite a nota: ')))
+        res = input('Deseja inserir outra nota? (S/N)').lower()
 
-media = mean(notas)
-status = status(media)
-print(status)
+    media = mean(notas)
+    status = status(media)
+    print(status)
 ```
 ---
 
@@ -73,34 +75,38 @@ conclusão da soma, o novo estado da memória passa a ser 8._**
 
 ---
 ```python
-def soma(mem, n):
+def somar(mem, n):
     return mem + n
 
 
-def subt(mem, n):
+def subtrair(mem, n):
     return mem - n
 
 
-def mult(mem, n):
+def multiplicar(mem, n):
     return mem * n
 
 
-def divi(mem, n):
+def dividir(mem, n):
     return mem / n
 
 
-def limpar_mem():
+def limpar_memoria():
     return 0.0
 
 
-def calculadora(mem, opc):
+def encerrar():
+    print('Encerrando...')
+
+
+def calculadora(mem, opc, n):
+    menu = {1: somar(mem, n),
+            2: subtrair(mem, n),
+            3: multiplicar(mem, n),
+            4: dividir(mem, n),
+            5: limpar_memoria(),
+            6: encerrar()}
     if 1 <= opc <= 6:
-        menu = {1: soma(mem, n),
-                2: subt(mem, n),
-                3: mult(mem, n),
-                4: divi(mem, n),
-                5: limpar_mem(),
-                6: print('Encerrando...')}
         mem = menu[opc]
     else:
         print(f'\nSELECIONE UMA OPÇÃO VÁLIDA!\n')
@@ -108,21 +114,23 @@ def calculadora(mem, opc):
     return mem
 
 
-mem = 0.0
-opc = 0
-while opc != 6:
-    print(f'Estado da memória: {mem}\n'
-              f'Selecione uma opção:\n'
-              f'[1] Somar\n'
-              f'[2] Subtrair\n'
-              f'[3] Multiplicar\n'
-              f'[4] Dividir\n'
-              f'[5] Limpar memória\n'
-              f'[6] Sair do programa')
-    opc = int(input(f'------> '))
-    if 1 <= opc <= 4:
-        n = float(input(f'Digite o valor: '))
-    mem = calculadora(mem, opc)
+if __name__ == '__main__':
+    mem = 0.0
+    n = 1
+    opc = 0
+    while opc != 6:
+        print(f'Estado da memória: {mem}\n'
+                  f'Selecione uma opção:\n'
+                  f'[1] Somar\n'
+                  f'[2] Subtrair\n'
+                  f'[3] Multiplicar\n'
+                  f'[4] Dividir\n'
+                  f'[5] Limpar memória\n'
+                  f'[6] Sair do programa')
+        opc = int(input(f'------> '))
+        if 1 <= opc <= 4:
+            n = float(input(f'Digite o valor: '))
+        mem = calculadora(mem, opc, n)
 ```
 ---
 
