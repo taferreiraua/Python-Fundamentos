@@ -135,7 +135,8 @@ if __name__ == '__main__':
 ---
 
 ### **Questão 4:**
-> **__**
+> **_Faça um programa que, dado uma figura geométrica que pode ser uma circunferência,
+triângulo ou retângulo, calcule a área e o perímetro da figura._**
 
 ---
 ```python
