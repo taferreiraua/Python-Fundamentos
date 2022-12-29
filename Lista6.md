@@ -40,22 +40,27 @@ tabela a seguir:_**
 
 ---
 ```python
-def calc_media(notas):
-    return sum(notas)/len(notas)
+from numpy import mean
 
 
-def status_alu(media):
-    if status >= 6:
+def status(media):
+    if media >= 6:
         return f'Status: Aprovado.'
-    elif 4 <= status < 6:
+    elif 4 <= media < 6:
         return f'Status: Verificação Suplementar.'
-    elif status < 4:
+    elif media < 4:
         return f'Status: Reprovado.'
 
 
-print(f'\nNotas = {notas}')
-print(f'Media = {calc_media(notas)}')
-print(f'{status_alu(notas)}')
+res = ''
+notas = list()
+while res != 'n':
+    notas.append(int(input('Digite a nota: ')))
+    res = input('Deseja inserir outra nota? (S/N)')
+
+media = mean(notas)
+status = status(media)
+print(status)
 ```
 ---
 
