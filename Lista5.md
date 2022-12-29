@@ -66,7 +66,9 @@ elif abs(proxMai - media) < abs(proxMen - media):
 ---
 
 ### **Questão 3:**
-> **__**
+> **_Faça um programa que percorre duas listas e intercala os elementos de ambas,
+formando uma terceira lista. A terceira lista deve começar pelo primeiro elemento da
+lista menor._**
 
 ---
 ```python
