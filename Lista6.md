@@ -56,7 +56,7 @@ res = ''
 notas = list()
 while res != 'n':
     notas.append(int(input('Digite a nota: ')))
-    res = input('Deseja inserir outra nota? (S/N)')
+    res = input('Deseja inserir outra nota? (S/N)').lower()
 
 media = mean(notas)
 status = status(media)
@@ -65,11 +65,57 @@ print(status)
 ---
 
 ### **Questão 3:**
-> **__**
+> **_Faça uma calculadora que forneça as seguintes opções para o usuário, usando funções
+sempre que necessário. Cada opção deve usar como operando um número lido do
+teclado e o valor atual da memória. Por exemplo, se o estado atual da memória é 5, e
+o usuário escolhe somar, ele deve informar um novo número (por exemplo, 3). Após a
+conclusão da soma, o novo estado da memória passa a ser 8._**
 
 ---
 ```python
+def soma(mem, n):
+    sum = mem + n
+    return sum
 
+
+def subt(mem, n):
+    sub = mem - n
+    return sub
+
+
+def mult(mem, n):
+    mul = mem * n
+    return mul
+
+
+def divi(mem, n):
+    div = mem / n
+    return div
+
+
+opc = 0
+mem = 0
+while opc != 6:
+    print(f'Estado da memória: {mem}')
+    print(f'Selecione uma opção:')
+    print(f'[1] Somar\n[2] Subtrair\n[3] Multiplicar\n[4] Dividir\n[5] Limpar memória\n[6] Sair do programa')
+    opc = int(input(f'------> '))
+    if 0 < opc < 5:
+        n = float(input(f'Digite o valor: '))
+        if opc == 1:
+            mem = soma(mem, n)
+        elif opc == 2:
+            mem = subt(mem, n)
+        elif opc == 3:
+            mem = mult(mem, n)
+        elif opc == 4:
+            mem = divi(mem, n)
+    elif opc == 5:
+        mem = 0
+    elif opc == 6:
+        break
+    else:
+        print(f'\nSELECIONE UMA OPÇÃO VÁLIDA!\n')
 ```
 ---
 
