@@ -3,6 +3,7 @@
 ### **Questão 1:**
 
 > **_Faça um programa que leia o nome, a idade, a altura, o peso e a nacionalidade do usuário e escreva essas informações na forma de um parágrafo de apresentação._**
+
 ---
 ```python
 nome = input('Nome: ')
@@ -44,7 +45,10 @@ y1 = float(input('y2: '))
 x2 = float(input('Ponto 2: \n'
                  'x2: '))
 y2 = float(input('y2: '))
-print(f'A distância entre os dois pontos é {sqrt((x2-x1)**2 + (y2-y1)**2)}')
+
+distancia = sqrt((x2-x1)**2 + (y2-y1)**2)
+
+print(f'A distância entre os dois pontos é {distancia}')
 ```
 
 ---
