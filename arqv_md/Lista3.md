@@ -83,39 +83,61 @@ print(f'A série fibonnaci para esse número é {fibon}')
 
 ### **Questão 4:**
 
-> **_Faça um programa para listar todos os divisores de um número ou dizer que o número
-> é primo caso não existam divisores. Ao final, verifique se o usuário deseja analisar
-> outro número._**
+ **Faça um programa para listar todos os divisores de um número ou dizer que o número
+ é primo caso não existam divisores. Ao final, verifique se o usuário deseja analisar
+ outro número.**
+
+### **Resolução:**
+
+> **_Sabendo que os unicos divisores de um número primo são 1 e ele mesmo, a lógica da questão
+>  é simplesmente contar o número de divisores: dado um valor de entrada, estabelecemos a
+>  variavel "count" como contador e iniciamos um `for` que vai desde o número inserido até o numero 1
+>  (inverter o `for` é opcional) e tentamos dividir o valor da entrada pelos numeros gerados; se o resto 
+>  da divisão for zero, então o número é um divisor: acrescentamos 1 ao "count" e exibimos a
+>  operação. Se ao final o valor de entrada obtiver apenas dois divisores então, certamente, ele é
+>  um número primo._**
 
 ---
 ```python
-num = int(input('Digite um número: '))
-ndiv = 0
+res = ''
+while res != 'n':
+    num = int(input('Digite um número: '))
 
-for div in range(num, 0, -1):
-    if num % div == 0:
-        res = round(num / div)
-        ndiv = ndiv + 1
-        print(f'{num}/{div} = {res}')
-if ndiv == 2:
-    print('O numero é primo.')
+    count = 0
+    for div in range(num, 0, -1):
+        if num % div == 0:
+            count += 1
+            print(f'{num}/{div} = {num/div}')
+    if num_div == 2:
+        print('O numero é primo.')
+    
+    res = input('Deseja analisar outro numero? (S/N)').lower()
 ```
 ---
 
 ### **Questão 5:**
 
-> **_Faça um programa que calcule o retorno de um investimento financeiro fazendo as
-> contas mês a mês, sem usar a fórmula de juros compostos._**
-> - **_O usuário deve informar quanto será investido por mês e qual será a taxa de
-> juros mensal;_**
-> - **_O programa deve informar o saldo do investimento após um ano (soma das
-> aplicações mês a mês considerando os juros compostos), e perguntar ao
-> usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;_**
-> - **_Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
-> taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:_**
+ **Faça um programa que calcule o retorno de um investimento financeiro fazendo as
+ contas mês a mês.**
+ - **O usuário deve informar quanto será investido por mês e qual será a taxa de
+ juros mensal;**
+ - **O programa deve informar o saldo do investimento após um ano (soma das
+ aplicações mês a mês considerando os juros compostos), e perguntar ao
+ usuário se ele deseja que seja calculado o ano seguinte, sucessivamente;**
+ - **Por exemplo, caso o usuário deseje investir R$ 100,00 por mês, e tenha uma
+ taxa de juros de 1% ao mês, o programa forneceria a seguinte saída:**
+
 ```
 Saldo do investimento após 1 ano: R$ 1268.25 Deseja processar mais um ano? (S/N)
 ```
+
+### **Resolução:**
+
+> **_Para deixar o código mais prático, definimos a função `calcularJuros()` que recebe como parâmetros
+> o valor de investimento, de juros e saldo, e retorna o saldo do investimento após 12 meses (calculado
+> a partir da fórmula do juros compostos). Ademais, o valor é informado ao usuário e ele pode, se desejar,
+> calcular o valor de mais anos._**
+
 ---
 ```python
 def calcularJuros(inves, juros, saldo):
@@ -129,30 +151,38 @@ def calcularJuros(inves, juros, saldo):
 inves = float(input('Investimento mensal: '))
 juros = float(input('Juros: '))
 saldo = 0
+ano = 1
 
 saldo = calcularJuros(inves, juros, saldo)
-ano = 1
-res = input(f'\nSaldo do investimento após {ano} ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
-while res.lower() == 's':
+res = input(f'\nSaldo do investimento após {ano} ano: R${saldo}\nDeseja processar mais um ano?(S/N)\n').lower()
+while res != 'n':
     saldo = calcularJuros(inves, juros, saldo)
     ano += 1
-    res = input(f'\nSaldo do investimento após {ano} anos: R${saldo}\nDeseja processar mais um ano?(S/N)\n')
+    res = input(f'\nSaldo do investimento após {ano} anos: R${saldo}\nDeseja processar mais um ano?(S/N)\n').lower()
 ```
 ---
 
 ### **Questão 6:**
-> **_Escreva um programa que imprime na tela os n primeiros números perfeitos. Um
-> número perfeito é aquele que é igual à soma dos seus divisores. Por exemplo, 6 = 1 +
-> 2 + 3._**
+ **Escreva um programa que imprime na tela os n primeiros números perfeitos. Um
+ número perfeito é aquele que é igual à soma dos seus divisores. Por exemplo, 6 = 1 +
+ 2 + 3.**
+
+### **Resolução:**
+
+> **_Definimos a função `numPerfeito()` que recebe o valor de entrada como parâmetro: estabelecemos
+> "divisores" para guardar todos os números cujo o valor é divisível por (para todos os valores de 
+> 1 á n, se o resto da divisão de n por ele for zero, então o número é um divisor de n). Por fim, se
+> a soma de todos os elementos da lista de divisores for igual ao valor de entrada, a função retornará
+> `True`, caso contrário retornará `False`._**
 
 ---
 ```python
-def perfeito(n):
-    soma = 0
+def numPerfeito(n):
+    divisores = list()
     for val in range(1, n):
         if n % val == 0:
-            soma += val
-    if soma == n:
+            divisores.append(val)
+    if sum(divisores) == n:
         return True
     else:
         return False
@@ -161,65 +191,100 @@ def perfeito(n):
 n = int(input('Exibir perfeitos até o número: '))
 
 for val in range(1, n + 1):
-    if (perfeito(val)):
+    if (numPerfeito(val)):
         print(val)
 ```
 ---
 
 ### **Questão 7:**
-> **_Um número inteiro pode ser igual ao produto de 3 números inteiros consecutivos,
+ **Um número inteiro pode ser igual ao produto de 3 números inteiros consecutivos,
 como, por exemplo, 120 = 4 x 5 x 6. Elabore um programa que, após ler um número n
-do teclado, verifique se n tem essa propriedade._**
+do teclado, verifique se n tem essa propriedade.**
+
+### **Resolução:**
+
+> **_A idéia do programa é bem simples: dado um determinado valor de entrada, realizamos
+> um `for` que vai de 1 até o valor inserido; para cada número, é verificado se seu produto
+> com seus dois numeros consecutivos é igual ao valor inserido; se sim, então guardamos o número
+> na variável "num", antes iniciada com o valor zero. Por fim, verificamos se o valor da variável
+> "num" foi alterado. Se sim, o valor satisfaz a condição dentro do `for`._**
 
 ---
 ```python
-num = int(input('Digite um número: '))
-i = 1
-while i * (i+1) * (i+2) < num:
-    i = i + 1
-if i * (i+1) * (i+2) == num:
-    print(f'{num} é o produto de {i} x {i+1} x {i+2}')
+valor = int(input('Digite um número: '))
+
+num = 0
+for i in range(1, valor):
+    if i * (i+1) * (i+2) == valor:
+        num = i   
+
+if num != 0:
+    print(f'{valor} é o produto de {num} x {num+1} x {num+2}')
 else:
-    print(f'{num} não é produto de inteiros consecutivos.')
+    print(f'{valor} não é produto de inteiros consecutivos.')
 ```
 ---
 
 ### **Questão 8:**
-> **_Elabore um programa que leia n valores e mostre a soma de seus quadrados._**
+ **Elabore um programa que leia n valores e mostre a soma de seus quadrados.**
+
+### **Resolução:**
+
+> **_Simples: adicionamos o valor de input já elevado ao quadrado no vetor e ao
+> final somamos os valores do vetor usando a função `sum()`._**
 
 ---
 ```python
-vet = list()
+vetor = list()
 res = ''
 while res != 'n':
-    vet.append(int(input('Digite o valor: '))**2)
+    vetor.append(int(input('Digite o valor: '))**2)
     res = input('Deseja inserir mais um valor? (S/N)').lower()
-print(sum(vet))
+print(sum(vetor))
 ```
 ---
 
 ### **Questão 9:**
-> **_Faça um programa que leia dois valores x e y, e calcula o valor de x dividido por y,
+ **Faça um programa que leia dois valores x e y, e calcula o valor de x dividido por y,
 além do resto da divisão. Não é permitido usar as operações de divisão e resto de
-divisão do Python (use apenas soma e subtração)._**
+divisão do Python (use apenas soma e subtração).**
+
+### **Resolução:**
+
+> **_Essa é um pouco complicada: recebemos valores inteiros para o dividendo e o divisor. Iniciamos a variável
+> "resultado" - que indicará quantas vezes conseguimos dividir o valor - com valor zero e uma outra 
+> variável auxiliar "aux" para guardar o valor original do divisor. Enquanto o divisor for menor ou 
+> igual ao dividendo; subtraímos o valor guardado em "aux" pelo dividendo, e guardamos o resultado 
+> disso na variável "resta_dividir"; adicionamos 1 ao resultado; o valor do dividendo passa a ser o de
+> "resta_dividir" - o que resta da subtração._**
 
 ---
 ```python
-num = int(input('Dividendo: '))
-div = int(input('Divisor: '))
-res = 0
-aux = div
-while div <= num:
-    ddiv = num - aux
-    res = res + 1
-    num = ddiv
-print(f'Resultado: {res}\nResto: {num}')
+dividendo = int(input('Dividendo: '))
+divisor = int(input('Divisor: '))
+resultado = 0
+aux = divisor
+while divisor <= dividendo:
+    resta_dividir = dividendo - aux
+    resultado += 1
+    dividendo = resta_dividir
+print(f'Resultado: {resultado}\nResto: {dividendo}')
 ```
 ---
 
 ### **Questão 10:**
-> **_Faça um programa em Python que calcule o valor de Pi, utilizando a fórmula de
-> Leibniz π/4 = 1 – 1/3 + 1/5 – 1/7 + 1/9 – 1/11 + 1/13 - ..._**
+ **Faça um programa em Python que calcule o valor de Pi, utilizando a fórmula de
+ Leibniz π/4 = 1 – 1/3 + 1/5 – 1/7 + 1/9 – 1/11 + 1/13 - ...**
+
+### **Resultados:**
+
+> **_Dado o padrão observado, de que todos os divisores das parcelas são ímpares e de que os valores em
+posição par são positivos e em posição ímpar são negativos (levando em conta a notação de index do python), 
+a idéia para o programa foi: executar um `for` de 1 á 1 milhão com incremento 2, cada valor dividindo 1, e
+guardando todos em um vetor. Depois, percorremos o vetor e identificamos quais os valores com index
+par e quais os valores com index impar, somando-os em seus respectivas variáveis acumulativas. Por fim,
+o valor de pi foi obtido ao subtrair os valores em posição ímpar pelos valores em posição par e multiplicando
+o resultado por 4._**
 
 ---
 ```python
@@ -232,7 +297,7 @@ for i in range(1, 1000000, 2):
     inter = 1/i
     vetor.append(inter)
 
-for j in range(500000):
+for j in range(len(vetor)):
     if j % 2 == 0:  # Somando os valores em posição par
         posipar += vetor[j]
     else:  # Somando os valores em posição ímpar
