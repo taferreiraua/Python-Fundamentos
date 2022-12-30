@@ -2,8 +2,13 @@
 
 ### **Questão 1:**
 
-> **_Faça um programa para montar a tabela de multiplicação de números de 1 a 10
-> (exemplo: 1 x 1 = 1, 1 x 2 = 2...)._**
+ **Faça um programa para montar a tabela de multiplicação de números de 1 a 10
+ (exemplo: 1 x 1 = 1, 1 x 2 = 2...).**
+
+### **Resolução:**
+
+> **_O programa recebe como entrada um numero inteiro, que é multiplicado de 1 á 10 utilizando
+> uma estrutura de repetição `for` com `range(1, 11)`._**
 
 ---
 ```python
@@ -15,8 +20,15 @@ for i in range(1, 11):
 ---
 
 ### **Questão 2:**
-> **_Faça um programa para determinar o número de dígitos de um número inteiro
-positivo informado_**
+ **Faça um programa para determinar o número de dígitos de um número inteiro
+positivo informado**
+
+### **Resolução:**
+
+> **_O programa tem como entrada um numero inteiro, e utiliza a função `len()` para 
+> determinar o número de digitos. Esta função retorna o número de itens em uma
+> string, array, listas, etc., mas não funciona em objetos do tipo inteiro. Assim, a
+> variavel foi convertida como str antes de ser passada para função._**
 
 ---
 ```python
@@ -28,20 +40,34 @@ print(f"O número possui {len(str(num))} digitos.")
 
 
 ### **Questão 3:**
-> **_Faça um programa para calcular a série de Fibonacci para um número informado pelo
-> usuário, sendo F(0) = 0, F(1) = 1 e F(n)= F(n-1)+F(n-2). Por exemplo, caso o usuário
-> informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34._**
+ **Faça um programa para calcular a série de Fibonacci para um número informado pelo
+ usuário, sendo F(0) = 0, F(1) = 1 e F(n)= F(n-1)+F(n-2). Por exemplo, caso o usuário
+ informe o número 9, o resultado seria: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.**
+ 
+### **Resolução:**
+
+> **_A sucessão de Fibonacci é uma sequência de números inteiros iniciados por zero e um, 
+> no qual cada termo subsequente corresponde a soma dos dois números anteriores. Existe uma
+> discussão sobre o primeiro termo da sequencia ser 0 ou 1, então assumiremos o primeiro
+> termo como 0 devido ao exemplo dado no enunciado. <br/> Assim, para os numeros 0 e 1, as 
+> sequencias são "0" e "0, 1" respectivamente. Para o restante, a lógica do programa é a seguinte: 
+> <br/> Definimos "fibon" como uma lista que será utilizada para guardar a sequencia do numero de entrada;
+> usando a função `extend()` adicionamos á lista os números 0, 1 e 1, que são os primeiros elementos de todo
+> e qualquer número maior que 1; definimos as variaveis "ultimo" e "penultimo" ambas com valor 1 -
+> os dois ultimos numeros da sequencia até o momento; do número 2 até o numero inserido, fazemos o proximo número
+> a soma dos dois anteriores; desse modo, "penultimo" passa a ser o valor que estava armazenado em "ultimo", e 
+> "ultimo" passa a ter o valor de "prox". Por fim, adicionamos o valor de "prox" á lista._**
 
 ---
 ```python
 num = int(input("Digite um número: "))
 
+fibon = list()
 if num == 0:
-    fibon = '[0]'
+    fibon.append(0)
 elif num == 1:
-    fibon = '[0, 1]'
+    fibon.extend([0, 1])
 else:
-    fibon = list()
     fibon.extend([0, 1, 1])
     ultimo = 1
     penultimo = 1
@@ -49,7 +75,6 @@ else:
         prox = ultimo + penultimo
         penultimo = ultimo
         ultimo = prox
-        i += 1
         fibon.append(prox)
 
 print(f'A série fibonnaci para esse número é {fibon}')
