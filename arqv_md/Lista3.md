@@ -276,7 +276,7 @@ print(f'Resultado: {resultado}\nResto: {dividendo}')
  **Faça um programa em Python que calcule o valor de Pi, utilizando a fórmula de
  Leibniz π/4 = 1 – 1/3 + 1/5 – 1/7 + 1/9 – 1/11 + 1/13 - ...**
 
-### **Resultados:**
+### **Resolução:**
 
 > **_Dado o padrão observado, de que todos os divisores das parcelas são ímpares e de que os valores em
 posição par são positivos e em posição ímpar são negativos (levando em conta a notação de index do python), 
