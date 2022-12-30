@@ -1,16 +1,21 @@
 # Operadores e Estruturas de Decisão
 
 ### **Questão 1:**
-> **_Faça um programa que calcule o IMC de uma pessoa (IMC = massa em kg / altura em metros elevado ao quadrado) e 
-> informe a sua classificação segundo a tabela a seguir, obtida na Wikipedia._**
-> |     IMC     |         Classificação        |
-> |-------------|------------------------------|
-> |    <18,5    |        Abaixo do peso        |
-> | 18,6 - 24,9 |           Saudável           |
-> | 25,0 - 29,9 |        Peso em excesso       |
-> | 30,0 - 34,9 |       Obesidade Grau I       |
-> | 35,0 - 39,9 |  Obesidade Grau II (severa)  |
-> |    >=40,0   | Obesidade Grau III (mórbida) |
+ **Faça um programa que calcule o IMC de uma pessoa (IMC = massa em kg / altura em metros elevado ao quadrado) e 
+ informe a sua classificação segundo a tabela a seguir, obtida na Wikipedia.**
+ |     IMC     |         Classificação        |
+ |-------------|------------------------------|
+ |    <18,5    |        Abaixo do peso        |
+ | 18,6 - 24,9 |           Saudável           |
+ | 25,0 - 29,9 |        Peso em excesso       |
+ | 30,0 - 34,9 |       Obesidade Grau I       |
+ | 35,0 - 39,9 |  Obesidade Grau II (severa)  |
+ |    >=40,0   | Obesidade Grau III (mórbida) |
+
+### **Resolução:**
+
+> **_As duas entradas foram convertidas para o tipo float. É calculado o IMC utilizando operadores basicos,
+> e depois uma estrutura de decisão if/else indica a classificação._**
 
 ---
 ```python
@@ -37,11 +42,18 @@ else:
 
 ### **Questão 2:**
 
-> **_Faça um programa que leia três coordenadas num espaço 2D e indique se formam um
-triângulo, juntamente com o seu tipo (equilátero, isósceles e escaleno)._**
-- Equilátero: todos os lados iguais;
-- Isósceles: dois lados iguais;
-- Escaleno: todos os lados diferentes.
+ **Faça um programa que leia três coordenadas num espaço 2D e indique se formam um
+triângulo, juntamente com o seu tipo (equilátero, isósceles e escaleno).**
+- **Equilátero: todos os lados iguais;**
+- **Isósceles: dois lados iguais;**
+- **Escaleno: todos os lados diferentes.**
+
+### **Resolução:**
+
+> **_Inserida as três medidas dos lados do triângulo, uma estrutura de decisão if/else
+> indica o tipo do triângulo. Para definir se as medidas configuram ou não um triângulo,
+> foi tomada a noção básica de geometria de que em qualquer triângulo, cada lado é 
+> menor que a soma dos outros dois lados._**
 
 ---
 ```python
@@ -63,13 +75,20 @@ else:
 
 ### **Questão 3:**
 
-> **_Faça um programa que leia um número inteiro de 5 dígitos e indique se ele é
-> palíndromo. Um número palíndromo é aquele que se lido da esquerda para a direita
-> ou da direita para a esquerda possui o mesmo valor (ex.: 15451)._**
+ **Faça um programa que leia um número inteiro de 5 dígitos e indique se ele é
+ palíndromo. Um número palíndromo é aquele que se lido da esquerda para a direita
+ ou da direita para a esquerda possui o mesmo valor (ex.: 15451).**
+
+### **Resolução:**
+
+> **_A variável "numero" tem como entrada um número inteiro, e em seguida é redefinida como uma string. 
+> Para verificar se o número é um palíndromo, a string foi invertida utilizando um _slice_ que se move de trás pra frente._**
 
 ---
 ```python
-numero = input('Digite um número: ')
+numero = int(input('Digite um número: '))
+
+numero = str(numero)
 
 if numero == numero[::-1]:
     print('É um palindromo.')
