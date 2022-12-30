@@ -1,4 +1,4 @@
-# Manipulação de Vetores em Python
+# Manipulação de Vetores
 
 ### **Questão 1:**
 > **_Faça um programa que simule um lançamento de dados. Lance o dado 100 vezes e
