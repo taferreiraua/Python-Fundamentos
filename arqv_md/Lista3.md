@@ -1,4 +1,4 @@
-# Estruturas de Repetição em Python
+# Estruturas de Repetição
 
 ### **Questão 1:**
 
