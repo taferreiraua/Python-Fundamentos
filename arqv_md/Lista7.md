@@ -17,10 +17,10 @@ with open("frase.txt", "r") as arq:
 ### **Questão 2:**
 > **_Escreva um programa que lê um arquivo contendo a identidade e o nome de várias
 pessoas, no seguinte formato:_**
-> - **_5384423 Manoel_**
-> - **_4345566 Alberto_**
-> - **_3235574 Mariana_**
-> **_O programa deve gerar um dicionário onde as chaves são as identidades e os valores
+> <br/> **_5384423 Manoel_**
+> <br/> **_4345566 Alberto_**
+> <br/> **_3235574 Mariana_**
+> <br/> **_O programa deve gerar um dicionário onde as chaves são as identidades e os valores
 os nomes. Ao final o programa deve exibir o dicionário._**
 
 ---
@@ -46,15 +46,15 @@ print(dic.get(id))
 
 ### **Questão 3:**
 > **_Escreva um programa que lê um arquivo contendo endereços IPs, da seguinte forma:_**
-> - **_200.135.80.9_**
-> - **_192.168.1.1_**
-> - **_8.35.67.74_**
-> - **_257.32.4.5_**
-> - **_85.345.1.2_**
-> - **_1.2.3.4_**
-> - **_9.8.234.5_**
-> - **_192.168.0.256_**
-> **_O programa deve mostrar os IPS indicando os que são válidos e inválidos (um
+> <br/> **_200.135.80.9_**
+> <br/> **_192.168.1.1_**
+> <br/> **_8.35.67.74_**
+> <br/> **_257.32.4.5_**
+> <br/> **_85.345.1.2_**
+> <br/> **_1.2.3.4_**
+> <br/> **_9.8.234.5_**
+> <br/> **_192.168.0.256_**
+> <br/> **_O programa deve mostrar os IPS indicando os que são válidos e inválidos (um
 endereço ip válido não pode ter uma de suas partes maior que 224)._**
 
 ---
