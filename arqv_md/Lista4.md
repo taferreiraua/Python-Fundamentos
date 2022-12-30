@@ -1,4 +1,4 @@
-# Manipulação de Strings em Python
+# Manipulação de Strings
 
 ### **Questão 1:**
 > **_Escreva um programa que lê uma frase, uma palavra antiga e uma palavra nova. O
