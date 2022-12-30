@@ -56,7 +56,7 @@ print(f"O número possui {len(str(num))} digitos.")
 > e qualquer número maior que 1; definimos as variaveis "ultimo" e "penultimo" ambas com valor 1 -
 > os dois ultimos numeros da sequencia até o momento; do número 2 até o numero inserido, fazemos o proximo número
 > a soma dos dois anteriores; desse modo, "penultimo" passa a ser o valor que estava armazenado em "ultimo", e 
-> "ultimo" passa a ter o valor de "prox". Por fim, adicionamos o valor de "prox" á lista._**
+> "ultimo" passa a ter o valor de "prox"; por fim, adicionamos o valor de "prox" á lista._**
 
 ---
 ```python
