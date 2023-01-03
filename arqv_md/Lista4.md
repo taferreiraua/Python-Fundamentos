@@ -1,13 +1,18 @@
 # Manipulação de Strings
 
 ### **Questão 1:**
-> **_Escreva um programa que lê uma frase, uma palavra antiga e uma palavra nova. O
+ **Escreva um programa que lê uma frase, uma palavra antiga e uma palavra nova. O
 programa deve imprimir a frase com as ocorrências da palavra antiga substituídas pela
-palavra nova. Por exemplo:_**
-> - **_Frase: “Quem parte e reparte fica com a maior parte”_**
-> - **_Palavra antiga: “parte”_**
-> - **_Palavra nova: “parcela”_**
-> - **_Saída: “Quem parcela e reparte fica com a maior parcela”_**
+palavra nova. Por exemplo:**
+ - **Frase: “Quem parte e reparte fica com a maior parte”**
+ - **Palavra antiga: “parte”**
+ - **Palavra nova: “parcela”**
+ - **Saída: “Quem parcela e reparte fica com a maior parcela”**
+
+### **Resolução:**
+> **_Usamos a função `split()`, que retorna uma lista onde cada elemento é uma
+> palavra da string. Em seguida a percorremos usando o `enumerate()`, que
+> retorna uma tupla de dois elementos a cada iteração: um número sequencial e um item da sequência correspondente._**
 
 ---
 ```python
@@ -26,8 +31,12 @@ print(frase)
 ---
 
 ### **Questão 2:**
-> **_Faça um programa que lê uma frase e retorna o número de palavras que a frase
-contém. Considere que a palavra pode começar e/ou terminar por espaços._**
+ **Faça um programa que lê uma frase e retorna o número de palavras que a frase
+contém. Considere que a palavra pode começar e/ou terminar por espaços.**
+
+### **Resolução:**
+> **_Usamos a função `split()` para retornar uma lista com cada palavra da frase, 
+> e usamos o `len()` para retornar a quantidade de elemento._**
 
 ---
 ```python
@@ -40,8 +49,11 @@ print(f'Há {len(plv)} palavras nesta frase.')
 ---
 
 ### **Questão 3:**
-> **_Faça um programa que recebe uma frase e substitui todas as ocorrências de espaço por
-“#”._**
+ **Faça um programa que recebe uma frase e substitui todas as ocorrências de espaço por
+“#”.**
+
+### **Resolução:**
+> **_A função `replace()` substitui trechos de uma string._**
 
 ---
 ```python
@@ -52,16 +64,20 @@ print(frase.replace(' ', '#'))
 ---
 
 ### **Questão 4:**
-> **_Faça um programa que decida se duas strings lidas do teclado são palíndromas
+ **Faça um programa que decida se duas strings lidas do teclado são palíndromas
 mútuas, ou seja, se uma é igual à outra quando lida de trás para frente. Exemplo:
-amor e roma._**
+amor e roma.**
+
+### **Resolução:**
+
+> **_Simples: usamos uma notação slice para reverter a string e comparar com a string
+> original._**
 
 ---
 ```python
 plv = input('Digite uma palavra: ')
 
-vlp = plv[::-1]
-if plv == vlp:
+if plv == plv[::-1]:
     print('A palavra é um palindromo.')
 else:
     print('Não é um palindromo.')
