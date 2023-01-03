@@ -85,28 +85,32 @@ else:
 ---
 
 ### **Questão 5:**
-> **_Um anagrama é uma palavra que é feita a partir da transposição das letras de outra
+ **Um anagrama é uma palavra que é feita a partir da transposição das letras de outra
 palavra ou frase. Por exemplo, “Iracema” é um anagrama para “America”. Escreva
 um programa que decida se uma string é um anagrama de outra string, ignorando os
 espaços em branco. O programa deve considerar maiúsculas e minúsculas como sendo
-caracteres iguais, ou seja, “a” = “A”._**
+caracteres iguais, ou seja, “a” = “A”.**
+
+### **Resolução:**
+
+> **_Definimos a função `isanagrama()` que recebe como parâmetro duas palavras e retorna
+> `True`, se as palavras são anagramas, e `False` caso contrário. Tranformamos as duas palavras
+> em listas, onde cada elemento é uma letra da palavra e depois ordenamos as letras, para
+> facilitar a verificação._**
 
 ---
 ```python
 def isanagrama(plv1: str, plv2: str):
-    if len(plv1) != len(plv2):
-        return False
+    plv1 = list(plv1)
+    plv2 = list(plv2)
+
+    plv1.sort()
+    plv2.sort()
+
+    if plv1 == plv2:
+        return True
     else:
-        plv1 = list(plv1)
-        plv2 = list(plv2)
-
-        plv1.sort()
-        plv2.sort()
-
-        if plv1 == plv2:
-            return True
-        else:
-            return False
+        return False
 
 
 plv1 = input('Digite uma palavra: ').upper().strip()
@@ -120,9 +124,12 @@ else:
 ---
 
 ### **Questão 6:**
-> **_Faça um programa que leia o nome do usuário e mostre o nome de trás para frente,
+ **Faça um programa que leia o nome do usuário e mostre o nome de trás para frente,
 utilizando somente letras maiúsculas. Exemplo: Nome = Vanessa. Resultado gerado
-pelo programa: ASSENAV._**
+pelo programa: ASSENAV.**
+
+**_Simples: usamos um slice inverso, para inverter a string, e a função `upper()` para
+converter as letra minúsculas em maiúsculas._**
 
 ---
 ```python
@@ -135,19 +142,22 @@ print(nome.upper())
 ---
 
 ### **Questão 7:**
-> **_Faça um programa que leia o nome do usuário e o imprima na vertical, em forma de
-escada, usando apenas letras maiúsculas. Por exemplo:_**
-> - **_Entrada:_**
+ **Faça um programa que leia o nome do usuário e o imprima na vertical, em forma de
+escada, usando apenas letras maiúsculas. Por exemplo:**
+ - **Entrada:**
 ```
 Nome = Vanessa
 ```
-> - **_Saída:_**
+ - **Saída:**
 ```
 V
 VA
 VAN
 ...
 ```
+
+### **Resolução:**
+> **_Usaremos um slice que retornara a string até o index "i" do loop._**
 
 ---
 ```python
@@ -159,9 +169,16 @@ for i in range(len(plv) + 1):
 ---
 
 ### **Questão 8:**
-> **_Faça um programa que leia uma data de nascimento no formato dd/mm/aaaa e
-imprima a data com o mês escrito por extenso. Por exemplo:_**
-> - **_Entrada:_**
+ **Faça um programa que leia uma data de nascimento no formato dd/mm/aaaa e
+imprima a data com o mês escrito por extenso. Por exemplo:**
+ - **Entrada:**
+
+### **Resolução:**
+
+> **_Usaremos a função `split('/')` que retornara o dia, mes e ano recebidos no input
+> separadamente. Depois imprimimos uma string com a data por extenso com a ajuda 
+> de uma lista contendo o nome de todos os meses._**
+
 ```
 Data = 20/02/1995
 ```
