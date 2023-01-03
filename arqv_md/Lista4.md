@@ -173,12 +173,6 @@ for i in range(len(plv) + 1):
 imprima a data com o mês escrito por extenso. Por exemplo:**
  - **Entrada:**
 
-### **Resolução:**
-
-> **_Usaremos a função `split('/')` que retornara o dia, mes e ano recebidos no input
-> separadamente. Depois imprimimos uma string com a data por extenso com a ajuda 
-> de uma lista contendo o nome de todos os meses._**
-
 ```
 Data = 20/02/1995
 ```
@@ -186,6 +180,12 @@ Data = 20/02/1995
 ```
 20 de fevereiro de 1995
 ```
+
+### **Resolução:**
+
+> **_Usaremos a função `split('/')` que retornara o dia, mes e ano recebidos no input
+> separadamente. Depois imprimimos uma string com a data por extenso com a ajuda 
+> de uma lista contendo o nome de todos os meses._**
 
 ---
 ```python
