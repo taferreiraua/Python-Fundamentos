@@ -1,11 +1,15 @@
 # Manipulação de Vetores
 
 ### **Questão 1:**
-> **_Faça um programa que simule um lançamento de dados. Lance o dado 100 vezes e
+ **Faça um programa que simule um lançamento de dados. Lance o dado 100 vezes e
 armazene os resultados em um vetor. Depois, monte um outro vetor contendo quantas
-vezes cada valor foi obtido. Imprima os dois vetores. Use a função
-random.randint(1,6) para gerar números aleatórios, simulando os lançamentos dos
-dados._**
+vezes cada valor foi obtido. Imprima os dois vetores.**
+
+### **Resolução:**
+
+> **_Para simular o lançamento dos dados, usamos a função `random.randint()` para 
+> gerar números aleatórios de 1 a 6, armazenando os resultados em uma lista. Em seguida,
+> usamos a função `count()` para contar a ocorrencia de cada numero e armazenamos em outra lista._**
 
 ---
 ```python
@@ -25,8 +29,12 @@ print(ocorrencias)
 ---
 
 ### **Questão 2:**
-> **_Faça um programa que percorre um vetor e imprime na tela a média dos valores do
-vetor e o valor mais próximo da média._**
+ **Faça um programa que percorre um vetor e imprime na tela a média dos valores do
+vetor e o valor mais próximo da média.**
+
+### **Resolução:**
+
+> **__**
 
 ---
 ```python
@@ -66,9 +74,13 @@ elif abs(proxMai - media) < abs(proxMen - media):
 ---
 
 ### **Questão 3:**
-> **_Faça um programa que percorre duas listas e intercala os elementos de ambas,
+ **Faça um programa que percorre duas listas e intercala os elementos de ambas,
 formando uma terceira lista. A terceira lista deve começar pelo primeiro elemento da
-lista menor._**
+lista menor.**
+
+### **Resolução:**
+
+> **__**
 
 ---
 ```python
