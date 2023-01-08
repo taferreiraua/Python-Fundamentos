@@ -34,42 +34,30 @@ vetor e o valor mais próximo da média.**
 
 ### **Resolução:**
 
-> **__**
+> **_Definimos a função `MenorDesvio` que recebe o vetor como parâmetro e: calcula a media,
+> constroi um dicionario com cada valor do vetor e a diferença entre ele e a media. Ao fim,
+> a função retorna o valor que obteve a menor diferença._**
 
 ---
 ```python
+from numpy import mean
+
+
+def MenorDesvio(vetor):
+    media = mean(vetor)
+    valores = dict()
+    for num in vetor:
+        valores[num] = abs(num - media)
+    return min(valores, key=valores.get)
+
+
 res = ''
 vetor = list()
 while res != 'n':
-    vetor.append(int(input('Digite um número: ')))
+    vetor.append(float(input('Digite um número: ')))
     res = input('Deseja adicionar mais um número? (S/N)').lower()
 
-media = sum(vetor)/len(vetor)
-
-maiores = list()
-menores = list()
-for num in sorted(vetor):
-    if media <= num:  # pega os valores maiores ou iguais a media
-        maiores.append(num)
-    if media >= num:  # pega os valores menores ou iguais a media
-        menores.append(num)
-
-proxMai = maiores[0]  # menor numero dentre os valores maiores que a media
-proxMen = menores[-1]  # maior numero dentre os valores menores que a media
-
-# Compara a diferença entre proxMai e proxMen (usando modulo)
-#  1) Se existirem dois numeros igualmente proximos á media:
-if abs(proxMai - media) == abs(proxMen - media) and proxMen != proxMai:
-    print(f'Valores mais próximos da média: {proxMen}, {proxMai}')
-#  2) Se o numero da media estiver presente no vetor:
-elif proxMai == proxMen:
-    print(f'Valor mais próximo da média: {proxMai}')
-#  3) Se a distancia de proxMai/media for maior que a de prox3/media:
-elif abs(proxMai - media) > abs(proxMen - media):
-    print(f'Valor mais próximo da média: {proxMen}')
-#  4) Se a distancia de prox3/media for maior que a de prox2/media:
-elif abs(proxMai - media) < abs(proxMen - media):
-    print(f'Valor mais próximo da média: {proxMai}')
+print(f'Numero mais proximo da media: {MenorDesvio(vetor)}')
 ```
 ---
 
@@ -80,7 +68,12 @@ lista menor.**
 
 ### **Resolução:**
 
-> **__**
+> **_Definimos a função `dimLista()`, que retornará qual a menor e a maior lista. Para unir
+> as listas, definimos `intercalarListas()`: primeiro usamos o `zip()`, que vai unir os valores 
+> de cada lista em tuplas, e adicionamos os valores em um terceiro vetor. Para adicionar os valores
+> restantes (observe que agora todos os valores da lista menor já foram adicionados), dividiremos
+> o tamanho da lista intercalada por 2, e usaremos esse valor como índice. Então, usaremos um slice
+> que vai desde o índice calculado até o final da lista maior._**
 
 ---
 ```python
@@ -93,13 +86,29 @@ def preencherVetor():
     return vetor
 
 
+def dimLista(vetor1, vetor2):
+    menor = min(vetor1, vetor2, key=len)
+    maior = max(vetor1, vetor2, key=len)
+    return menor, maior
+
+
+def intercalarLista(menor, maior):
+    inter = list()
+    for a, b in zip(menor, maior):
+        inter.extend([a, b])
+    indice = int(len(inter)/2)
+    inter.extend(maior[indice:])
+    return inter
+    
+
+
 vetor1 = preencherVetor()
 vetor2 = preencherVetor()
 
-inter = list()
-for a, b in zip(vetor1, vetor2):
-    inter.extend([a, b])
+menor, maior = dimLista(vetor1, vetor2)
 
-print(f'Lista intercalada: {inter + vetor1[len(vetor2):] + vetor2[len(vetor1):]}')
+vetor3 = intercalarLista(menor, maior)
+
+print(f'Lista intercalada: {vetor3}')
 ```
 ---
